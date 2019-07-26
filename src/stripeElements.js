@@ -3,7 +3,8 @@ export const Stripe = {
   createToken: null,
   createSource: null,
   retrieveSource: null,
-  elements: null
+  elements: null,
+  createPaymentMethod: null
 }
 
 export const baseStyle = {
@@ -50,6 +51,7 @@ export function create(elementType, key_or_stripe, options = {}) {
   Stripe.createToken = (options) => Stripe.instance.createToken(element, options)
   Stripe.createSource = (options) => Stripe.instance.createSource(element, options)
   Stripe.retrieveSource = (options) => Stripe.instance.retrieveSource(options)
+  Stripe.createPaymentMethod = () => Stripe.instance.createPaymentMethod('card', element)
 
   return element
 }
@@ -60,4 +62,5 @@ export function destroy() {
     Stripe.createToken = null
     Stripe.createSource = null
     Stripe.retrieveSource = null
+    Stripe.createPaymentMethod = null
 }
