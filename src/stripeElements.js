@@ -4,7 +4,7 @@ export const Stripe = {
   createSource: null,
   retrieveSource: null,
   elements: null,
-  createPaymentMethod: null
+  createPaymentMethod: null,
 }
 
 export const baseStyle = {
@@ -24,7 +24,7 @@ export const baseStyle = {
   }
 }
 
-function init(key, options = {}) {
+export function init(key, options = {}) {
   if (typeof key === "object" && typeof key.elements === "function") {
     Stripe.instance = key
   }

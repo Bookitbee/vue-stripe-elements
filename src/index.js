@@ -1,5 +1,5 @@
 import './lib'
-import { Stripe, baseStyle } from './stripeElements'
+import { Stripe, baseStyle, init } from './stripeElements'
 import StripeElement from './StripeElement'
 import Card from './Card'
 import CardExpiry from './CardExpiry'
@@ -15,6 +15,7 @@ module.exports = {
   PostalCode,
   StripeElement,
   baseStyle,
+  init,
   get instance() { return Stripe.instance },
   get createToken() { return Stripe.createToken },
   get createSource() { return Stripe.createSource },
